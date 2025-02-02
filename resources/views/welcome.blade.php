@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>profile</title>
 
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -28,40 +28,43 @@
 <header class="header">
     <a href="" class="logo">nampox</a>
     <nav class="navbar">
-        <a href="" class="active">Home</a>
-        <a href="">About</a>
-        <a href="">Services</a>
-        <a href="">Portfolio</a>
-        <a href="">Contact</a>
+        <a href="#" class="nav-link active" id="home-link">Trang chủ</a>
+        <a href="#" class="nav-link" id="about-link">Dự án</a>
+        <a href="#" class="nav-link" id="services-link">Services</a>
+        <a href="#" class="nav-link" id="portfolio-link">Portfolio</a>
+        <a href="#" class="nav-link" id="contact-link">Contact</a>
         @if (Route::has('login'))
             @auth
-                <a href="{{ url('/dashboard') }}">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="nav-link" id="dashboard-link">Dashboard</a>
             @else
-                <a href="{{ route('login') }}">Log in</a>
+                <a href="{{ route('login') }}" class="nav-link" id="login-link">Log in</a>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
+                    <a href="{{ route('register') }}" class="nav-link" id="register-link">Register</a>
                 @endif
             @endauth
         @endif
     </nav>
 </header>
-<section class="home">
-    <div class="home-content">
-        <h1>Hi, tôi là nampox</h1>
-        <h3>Php developer</h3>
-        <p>Tôi là một lập trình viên PHP với kinh nghiệm trong việc phát triển ứng dụng web. Tôi đam mê công nghệ và
-            luôn tìm kiếm cơ hội để hoàn thiện kỹ năng của mình. Với nền tảng vững chắc về các framework như Laravel và
-            CodeIgniter, tôi mong muốn đóng góp vào những dự án sáng tạo và đầy thử thách.</p>
-        <div class="btn-box">
-            <a href="">Hire Me</a>
-            <a href="">Let's Talk</a>
-        </div>
-    </div>
-    <div class="home-sci">
-        <a href="https://www.facebook.com/nampox2612/"><i class='bx bxl-facebook'></i></a>
-        <a href="https://www.youtube.com/@nampox3618"><i class='bx bxl-youtube'></i></a>
-        <a href=""><i class='bx bxl-instagram'></i></a>
-    </div>
-</section>
+<script>
+    $(document).ready(function() {
+        $('.nav-link').click(function(e) {
+            var linkId = $(this).attr('id');
+            if (linkId !== 'dashboard-link' && linkId !== 'login-link' && linkId !== 'register-link') {
+                e.preventDefault();
+
+                var target = linkId.replace('-link', '');
+                $('section').hide();
+                $('a.nav-link').removeClass('active');
+                $('#' + target).show();
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>
+@include('frontend.user.home')
+@include('frontend.user.abount')
+@include('frontend.user.services')
+@include('frontend.user.portfolio')
+@include('frontend.user.contact')
 </body>
 </html>

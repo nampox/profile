@@ -21,6 +21,25 @@ body{
     align-items: center;
     z-index: 100;
 }
+.logo_img {
+    position: relative;
+    height: 100%;
+    width: 60%;
+    background: url("/assets/img/welcome/logo.gif") no-repeat;
+    background-size: cover;
+    background-position: right center;
+}
+.logo_img::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2s;
+}
 .logo{
     position: relative;
     font-size: 25px;
@@ -49,7 +68,7 @@ body{
  .navbar a.active{
     color: #00abf0;
 }
-.home{
+.home,.about,.services,.portfolio,.contact{
     display: flex;
     height: 100vh;
     align-items: center;
