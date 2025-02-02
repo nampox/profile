@@ -22,6 +22,10 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="./assets/css/home.css">
 </head>
 <body>
@@ -29,7 +33,7 @@
     <a href="" class="logo">nampox</a>
     <nav class="navbar">
         <a href="#" class="nav-link active" id="home-link">Trang chủ</a>
-        <a href="#" class="nav-link" id="about-link">Dự án</a>
+        <a href="#" class="nav-link" id="project-link">Dự án</a>
         <a href="#" class="nav-link" id="services-link">Services</a>
         <a href="#" class="nav-link" id="portfolio-link">Portfolio</a>
         <a href="#" class="nav-link" id="contact-link">Contact</a>
@@ -62,7 +66,7 @@
     });
 </script>
 @include('frontend.user.home')
-@include('frontend.user.abount')
+@include('frontend.user.project')
 @include('frontend.user.services')
 @include('frontend.user.portfolio')
 @include('frontend.user.contact')

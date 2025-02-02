@@ -10,7 +10,7 @@ body{
     color: #ededed;
 }
 .header{
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -25,7 +25,7 @@ body{
     position: relative;
     height: 100%;
     width: 60%;
-    background: url("/assets/img/welcome/logo.gif") no-repeat;
+        background: url("/assets/img/welcome/logo.gif") no-repeat;
     background-size: cover;
     background-position: right center;
 }
@@ -68,7 +68,7 @@ body{
  .navbar a.active{
     color: #00abf0;
 }
-.home,.about,.services,.portfolio,.contact{
+.home,.services,.portfolio,.contact{
     display: flex;
     height: 100vh;
     align-items: center;
@@ -196,7 +196,7 @@ body{
     width: 100%;
 }
 .home-sci{
-    position: absolute;
+    position: relative;
     bottom: 40px;
     width: 170px;
     display: flex;
